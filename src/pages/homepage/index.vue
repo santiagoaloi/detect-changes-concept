@@ -1,25 +1,27 @@
 <template>
   <VContainer>
-    <SettingsCard
-      subtitle="Works with ref and reactive, and nested data"
-      title="Detect data changes"
-    >
-      <VTextField v-model="user.name" />
+    <VForm @keyup.esc="rest()">
+      <SettingsCard
+        subtitle="Works with ref and reactive, and nested data"
+        title="Detect data changes"
+      >
+        <VTextField v-model="user.name" />
 
-      <template #footer>
-        <div class="d-flex pa-4">
-          <VSpacer />
-          <SettingsButton v-show="hasNewValues" title="Reset" @click="reset()" />
-          <SettingsButton
-            :disabled="!hasNewValues"
-            :loading="isSavingLoading"
-            submit
-            title="Save"
-            @click="save()"
-          />
-        </div>
-      </template>
-    </SettingsCard>
+        <template #footer>
+          <div class="d-flex pa-4">
+            <VSpacer />
+            <SettingsButton v-show="hasNewValues" title="Reset" @click="reset()" />
+            <SettingsButton
+              :disabled="!hasNewValues"
+              :loading="isSavingLoading"
+              submit
+              title="Save"
+              @click="save()"
+            />
+          </div>
+        </template>
+      </SettingsCard>
+    </VForm>
   </VContainer>
 </template>
 
