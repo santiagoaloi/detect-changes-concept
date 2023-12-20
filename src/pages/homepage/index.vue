@@ -1,6 +1,6 @@
 <template>
   <VContainer>
-    <VForm @keyup.esc="rest()">
+    <VForm @keyup.esc="reset()">
       <SettingsCard
         subtitle="Works with ref and reactive, and nested data"
         title="Detect data changes"
